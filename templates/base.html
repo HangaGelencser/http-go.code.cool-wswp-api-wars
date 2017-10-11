@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Star Wars Api War</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="{{ url_for ('static', filename='app.js')}}" async></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="container">
+    <h1> Star Wars Universe Planet </h1>
+    <div id="buttons">
+        <button id="previous">previous</button>
+        <button id="next">next</button>
+    </div>
+    <table>
+        <tr id="columns">
+            <th>Name</th>
+            <th>Diameter in kilometer</th>
+            <th>Climate</th>
+            <th>Terrain</th>
+            <th>Surface water percantage</th>
+            <th>Population in formatted way</th>
+            <th>Residents</th>
+        </tr>
+        <tbody class="myTable">
+        </tbody>
+
+    </table>
+    </div>
+</body>
+</html>
