@@ -1,6 +1,0 @@
-<div id="myModal" class="modal">
-            <div class=modalContent">
-                <span class="close"> &times; </span>
-                <p> ${numberOfResidents} </p>
-            </div>
-        </div>

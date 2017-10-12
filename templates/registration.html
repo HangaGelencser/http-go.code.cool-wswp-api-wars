@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login page</title>
+</head>
+
+<body>
+    <h2> Star Wars User Registration </h2>
+    <form action="/registration" method="POST">
+        {{ error }}
+        <br> User name:
+        <br>
+        <input type="text" name="username" placeholder="Your username">
+        <br> User password:
+        <br>
+        <input type="password" name="psw" placeholder="Your password">
+        <br> Confirm password:
+        <br>
+        <input type="password" name="psw2" placeholder="Confirm password">
+        <br>
+        <button type="submit">Enter</button>
+    </form>
+</body>
+
+</html>
