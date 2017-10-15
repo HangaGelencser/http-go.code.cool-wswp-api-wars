@@ -1,6 +1,9 @@
 import psycopg2
-import database_common
+import urllib
 import sys
+import os
+import database_common
+
 
 
 @database_common.connection_handler
@@ -11,12 +14,9 @@ def save_user(cursor, user, password_hash):
 
 @database_common.connection_handler
 def get_users_password(cursor, user_name):
-    try:
         cursor.execute("SELECT * FROM star_wars_users WHERE user_name = %(user_name)s;",
                        {'user_name': user_name})
         return cursor.fetchall()
-    except IndexError:
-        print("OOPS")
 
 
 @database_common.connection_handler

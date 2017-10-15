@@ -38,8 +38,8 @@ def log_in():
     user_name = request.form['log_username']
     password = request.form['log_psw']
     user_info = database.get_users_password(user_name)
-    DB_password = user_info[0]["password"]
-    check_password = user_handler.check_password(password, DB_password)
+    check_password = user_handler.check_password(user_info, password)
+    print(check_password)
     if check_password:
         session['user'] = user_info[0]["user_name"]
         welcome = "Welcome " + user_info[0]["user_name"]

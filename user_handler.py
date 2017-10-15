@@ -8,7 +8,7 @@ def get_hashed_password(plain_text_password):
     return hashed_bytes.decode("utf-8")
 
 
-def check_password(plain_text_password, hashed_text_password):
+def check_hashed_password(plain_text_password, hashed_text_password):
     hashed_bytes_password = hashed_text_password.encode("utf-8")
     return bcrypt.checkpw(plain_text_password.encode("utf-8"), hashed_bytes_password)
 
@@ -31,3 +31,13 @@ def registration_handler(user_name, password, confirm_password):
     database.save_user(user_name, hashed_password)
     registration_message = "Registration complete, please log in"
     return registration_message
+
+
+def check_password(user_info, password):
+    if not user_info:
+        print(user_info)
+        return False
+    else:
+        DB_password = user_info[0]["password"]
+        hashed_password = check_hashed_password(password, DB_password)
+        return hashed_password

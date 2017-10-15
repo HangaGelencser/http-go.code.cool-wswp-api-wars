@@ -13,14 +13,14 @@
 
 <body>
     <div id="container">
-        <h1>Star Wars Planet Universe</h1>
         <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
+            <div class="container-fluid navbar-left">
+                <h3 class="navbar-text">Star Wars Planet Universe</h3>
+                <p class="navbar-text">{{ error }}</p>
+                <p class="navbar-text">{{ reg_message }}</p>
+                <div class="navbar-header navbar-right">
                     {% if not session['user'] %}
                     <form action="/login" method="POST" class="navbar-form navbar-left">
-                        <p>{{ error }}</p>
-                        <p>{{ reg_message }}</p>
                         <div class="form-group">
                             <input type="text" name="log_username" required placeholder="Username" class="span3">
                             <input type="password" name="log_psw" required placeholder="Password">
@@ -38,13 +38,15 @@
                     </div>
                 </form>
                 {% endif %}
-                <form action="/sign_in" method="POST" class="navbar-form navbar-right">
+                <form action="/sign_in" method="POST" class="navbar-form navbar-left">
                     <button type="submit" id="sign_in" class="btn btn-default btn-sm">
                         <span class="glyphicon glyphicon-user"></span> Sign up
                     </button>
                 </form>
             </div>
         </nav>
+        <div id="buttons">
+        </div>
         <table class="table table-striped">
             <tr id="columns">
                 <th>Name</th>
@@ -58,12 +60,10 @@
             <tbody class="myTable">
             </tbody>
         </table>
-        <div id="buttons">
-        </div>
         <div id="overlay">
             <div id="modalContent">
                 <a href='#' onclick='overlay()' class="close" aria-label="Close"> X </a>
-                <table id="modalTable" class="table table-striped">
+                <table id="modalTable" class="table">
                     <tr id="modalColumns">
                         <th>Name</th>
                         <th>Height(in meters)</th>

@@ -37,7 +37,7 @@ function isArrayEmpty(data, index, residents) {
         return `<th> ${"Unknown"} </th>`
     } else {
         var numberOfResidents = arrayOfResidents.length;
-        return `<th><button id="planet${index}" class="btn btn-outline-primary">
+        return `<th><button id="planet${index}" class="btn btn-outline-secondary">
                 ${numberOfResidents + " " + "resident(s)"}</button></th>`;
     }
 }
@@ -46,8 +46,8 @@ function generateButtons() {
     document.getElementById("buttons").innerHTML = `
         <nav aria-label="...">
             <ul class="pager">
-                <li class="previous disabled"><button id="previous" class="btn btn-default"><span aria-hidden="true">&larr;</span></button></li>
-                <li class="next"><button id="next" class="btn btn-default"><span aria-hidden="true">&rarr;</span></button></li>
+                <li class="previous disabled"><button id="previous" class=""btn btn-outline-secondary""><span aria-hidden="true">&larr;</span></button></li>
+                <li class="next"><button id="next" class="btn btn-outline-secondary"><span aria-hidden="true">&rarr;</span></button></li>
             </ul>
         </nav>`;
     }

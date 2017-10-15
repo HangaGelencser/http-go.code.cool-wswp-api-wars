@@ -3,24 +3,32 @@
 
 <head>
     <title>Login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h2> Star Wars User Registration </h2>
-    <form action="/registration" method="POST">
-        {{ error }}
-        <br> User name:
-        <br>
-        <input type="text" name="username" placeholder="Your username">
-        <br> User password:
-        <br>
-        <input type="password" name="psw" placeholder="Your password">
-        <br> Confirm password:
-        <br>
-        <input type="password" name="psw2" placeholder="Confirm password">
-        <br>
-        <button type="submit">Enter</button>
-    </form>
+    <div class="container container-table">
+            <div class="row vertical-center-row">
+                    <div class="text-center col-md-4 col-md-offset-4">
+                    <h2> Star Wars User Registration </h2>
+                    <form action="/registration" method="POST">
+                        <label for="error"> {{ error }}</label><br>
+                        <label for="user_name">User name:</label>
+                        <br>
+                        <input type="text" name="username" placeholder="Your username" class="form-control" required>
+                        <label for="user_password">User password:</label>
+                        <br>
+                        <input type="password" name="psw" placeholder="Your password" class="form-control" required>
+                        <label for="confirm_password">Confrim password:</label>
+                        <br>
+                        <input type="password" name="psw2" placeholder="Confirm password" class="form-control" required>
+                        <br>
+                        <button type="submit" class="btn btn-outline-secondary">Enter</button>
+                    </form>
+                    </div>
+            </div>
+    </div>
 </body>
 
 </html>
