@@ -1,8 +1,7 @@
+import database_common
 import psycopg2
-import urllib
 import sys
 import os
-import database_common
 
 
 
