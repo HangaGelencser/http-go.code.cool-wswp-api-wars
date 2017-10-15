@@ -55,9 +55,3 @@ def logout():
     session.pop('user')
     return redirect('/')
 
-if __name__ == (__main__):
-    app.secret_key = "jujujuj"
-    app.run(
-        debug=True,
-        port=5000
-    )
